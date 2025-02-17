@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
+import { Provider } from "react-redux";
+import store from "@/store/store"
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const hack = localFont({
+  src: [
+    {path: "../fonts/Hack-Regular.woff", weight: "400", style: "normal"}, 
+    {path: "../fonts/Hack-Italic.woff", weight: "400", style: "italic"}, 
+    {path: "../fonts/Hack-Bold.woff", weight: "700", style: "normal"}, 
+    {path: "../fonts/Hack-BoldItalic.woff", weight: "700", style: "italic"}
+  ],
+  variable: "--font-hack",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,9 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${hack.variable} font-hack color-wdd-text bg-wdd-bg antialiased`}
       >
-        {children}
+        <Provider store={store}>{children}</Provider>
       </body>
     </html>
   );
