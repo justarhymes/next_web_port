@@ -1,0 +1,18 @@
+{
+  "id": "skills",
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": "Add skill here"
+        }
+      }
+    }
+  },
+  "label": "Skills",
+  "repeatable": true,
+  "status": true,
+  "format": "custom"
+}

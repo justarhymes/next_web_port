@@ -2,7 +2,8 @@ import { cardClasses, slugNames } from "@/utils/config";
 
 type ProjectsShowProps = {
   project: {
-    slug: string;
+    id: string;
+    tags: string[];
     data: {
       title: { text: string }[];
       type: { slug: string };

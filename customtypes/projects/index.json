@@ -1,0 +1,139 @@
+{
+  "id": "projects",
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+          "label": "Title"
+        }
+      },
+      "abbreviation": {
+        "type": "Text",
+        "config": {
+          "label": "Abbreviation"
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,o-list-item",
+          "allowTargetBlank": true,
+          "label": "Description"
+        }
+      },
+      "testing_this": {
+        "type": "Link",
+        "config": {
+          "allowTargetBlank": true,
+          "label": "Testing this",
+          "select": null
+        }
+      },
+      "type": {
+        "type": "Link",
+        "config": {
+          "select": "document",
+          "customtypes": ["type"],
+          "label": "Type",
+          "placeholder": "SELECT TYPE"
+        }
+      },
+      "year": {
+        "type": "Text",
+        "config": {
+          "label": "Year",
+          "placeholder": "What years did you work on this?"
+        }
+      },
+      "website_link": {
+        "type": "Link",
+        "config": {
+          "allowTargetBlank": true,
+          "label": "Website Link",
+          "select": null,
+          "placeholder": "Link?"
+        }
+      },
+      "secondary_link": {
+        "type": "Link",
+        "config": {
+          "label": "Secondary Link",
+          "select": null,
+          "placeholder": "Another link?"
+        }
+      },
+      "client": {
+        "type": "Link",
+        "config": {
+          "select": "document",
+          "customtypes": ["client"],
+          "label": "Client",
+          "placeholder": "Client worked with?"
+        }
+      },
+      "studio": {
+        "type": "Link",
+        "config": {
+          "select": "document",
+          "customtypes": ["studio"],
+          "label": "Studio",
+          "placeholder": "Studio worked with?"
+        }
+      },
+      "project-tasks": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "tasks": {
+              "type": "Link",
+              "config": {
+                "select": "document",
+                "customtypes": ["tasks"],
+                "label": "Tasks",
+                "placeholder": "Tasks?"
+              }
+            }
+          },
+          "label": "Project Tasks"
+        }
+      },
+      "project_skills": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "skills": {
+              "type": "Link",
+              "config": {
+                "select": "document",
+                "customtypes": ["skills"],
+                "label": "Skills",
+                "placeholder": "Skill?"
+              }
+            }
+          },
+          "label": "Project Skills"
+        }
+      },
+      "dip_id": {
+        "type": "Number",
+        "config": {
+          "label": "Dip ID",
+          "placeholder": "Display ID?"
+        }
+      },
+      "gallery_count": {
+        "type": "Number",
+        "config": {
+          "label": "Gallery Count",
+          "placeholder": "Gallery Count"
+        }
+      }
+    }
+  },
+  "label": "Projects",
+  "repeatable": true,
+  "status": true,
+  "format": "custom"
+}

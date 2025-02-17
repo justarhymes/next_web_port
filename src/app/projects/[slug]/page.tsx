@@ -1,18 +1,19 @@
-"use client";
-
-import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
+import { createClient } from "@/prismicio";
 import ProjectsShow from "@/components/projects/ProjectsShow";
 
-export default function ProjectPage() {
-  const router = useRouter();
-  const { slug } = router.query;
-  const projects = useSelector((state: any) => state.projects.projects);
+export default async function ProjectPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const client = createClient();
+  const response = await client.getByTags([params.slug], { pageSize: 1 });
 
-  if (!projects || !slug) return null;
+  const project = response.results[0];
 
-  const project = projects.find((p: any) => p.slug === slug);
-  if (!project) return <div>Project not found</div>;
+  if (!project) {
+    return <div>Project not found.</div>;
+  }
 
   return <ProjectsShow project={project} />;
 }
